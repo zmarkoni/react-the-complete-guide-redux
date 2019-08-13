@@ -39,15 +39,21 @@ class Counter extends Component {
     }
 }
 
-// Define Redux action
+// Define Redux actions
+
+// Here we map State to Props => setting some value from State
 const mapStateToProps = state => {
     return {
+        // We define as PROPS, and we can access it like: this.props.ctr
+        // state is Redux global state
         ctr: state.counter
     };
 };
 
+// here we Dispatch to Props => updating the state
 const mapDispatchToProps = dispatch => {
     return {
+        // We define as PROPS, and we can access it like: this.props.onIncrementCounter
         onIncrementCounter: () => dispatch({type: 'INCREMENT'})
     };
 };
