@@ -8,6 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 // Redux need to be define before React.DO.render
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux'; // We use provide to wrap our React APP to connect it with Redux
+
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
 
