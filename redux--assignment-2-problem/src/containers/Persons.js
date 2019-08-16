@@ -38,7 +38,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         // We define as PROPS, and we can access it like: this.props.onIncrementCounter
-        personAddedHandler: () => dispatch({type: actionTypes.ADD_PERSON}),
+        personAddedHandler: (name, age) => dispatch({type: actionTypes.ADD_PERSON, personData: {name:name, age:age}}),
         personDeletedHandler: (id) => dispatch({type: actionTypes.DELETE_PERSON, personId: id}),
 
     };
