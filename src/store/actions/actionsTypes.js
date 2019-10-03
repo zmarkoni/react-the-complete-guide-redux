@@ -20,24 +20,32 @@ export const decrement = () => {
 export const add = (value) => {
     return {
         type: ADD,
-        val: value
+        value: value
     }
 };
 
 export const substract = (value) => {
     return {
         type: SUBTRACT,
-        val: value
+        value: value
     }
+};
+
+export const saveResult = (res) => {
+    return {
+            type: STORE_RESULT,
+            result: res
+        }
 };
 
 export const storeResult = (res) => {
-    return {
-        type: STORE_RESULT,
-        result: res
-    }
+    return (dispatch) => { // dispatch coming from THUNK
+        setTimeout(() => {
+           // simulate async code to call database
+            dispatch(saveResult(res));
+        }, 2000);
+    };
 };
-
 
 export const deleteResult = (resElID) => {
     return {
