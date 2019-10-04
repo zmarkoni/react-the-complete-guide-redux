@@ -42,7 +42,6 @@ const mapStateToProps = state => {
 // here we Dispatch to Props => updating the state
 const mapDispatchToProps = dispatch => {
     return {
-        // We define as PROPS, and we can access it like: this.props.onIncrementCounter
         onIncrementCounter: () => dispatch(actionCreators.increment()),
         onDecrementCounter: () => dispatch(actionCreators.decrement()),
         onAddCounter: () => dispatch(actionCreators.add(5)),
